@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout1}">
+
+<th:block layout:fragment="css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/memberForm.css}">
+<style>
+	.fieldError{
+		color: #bd2130;
+	}
+</style>
+</th:block>
+
+<div layout:fragment="content">
+<div class="container">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form role="form" action="/members/new" method="post" th:object="${memberFormDto}">
+			<h2 style="margin-top:15%">회원가입</h2>
+			<hr class="colorgraph">
+			<div class="form-group">
+				<label>이름</label>
+                <input type="text" name="display_name" id="first_name" class="form-control input-lg" 
+                th:field ="*{name}" placeholder="이름을 입력하세요" tabindex="1">
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+									class="fieldError">Incorrect Data</p>
+			</div>
+			<div class="form-group">
+				<label>이메일</label>
+				<input type="text" name="display_name" id="display_name" class="form-control input-lg"
+				th:field ="*{email}" placeholder="이메일을 입력하세요" tabindex="2">
+				<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+									class="fieldError">Incorrect Data</p>
+			</div>
+			<div class="form-group">
+				<label>비밀번호</label>
+				<input type="password" name="display_name" id="display_name" class="form-control input-lg" 
+				th:field ="*{password}"placeholder="바말번호를 입력하세요" tabindex="3">
+				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+									class="fieldError">Incorrect Data</p>
+			</div>
+			<div class="form-group">
+				<label>주소</label>
+				<input type="text" name="address" id="display_name" class="form-control input-lg" 
+				th:field ="*{address}"placeholder="주소를 입력하세요" tabindex="4">
+				<p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"
+									class="fieldError">Incorrect Data</p>
+			</div>
+<!-- 			<div class="row">
+				<div class="col-xs-4 col-sm-3 col-md-3">
+					<span class="button-checkbox">
+						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
+                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+					</span>
+				</div>
+				<div class="col-xs-8 col-sm-9 col-md-9">
+					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+				</div>
+			</div> -->
+			
+			<hr class="colorgraph">
+<!-- 				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div> -->
+				<button type="submit" class="btn btn-success btn-block btn-lg">등록하기</button>
+					<input type="hidden" th:name="${_csrf.parameterName}"
+								th:value="${_csrf.token}">
+		</form>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+</div>
+
+<th:block layout:fragment="script">
+	<script th:inline="javascript">
+	//회원가입이 실패했을때
+	var errorMessage = [[${errorMessage}]];
+	
+	if(errorMessage != null){
+		alert(errorMessage);
+	}
+	</script>
+</th:block>
+</html>

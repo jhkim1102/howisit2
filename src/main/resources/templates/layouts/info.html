@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+<title>howisit</title>
+
+<!--공통으로 쓰이는 css  -->
+   <!-- bootstrap css -->
+   <link rel="stylesheet" th:href="@{/css/bootstrap1.min.css}">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<!--    <link rel="stylesheet" type="text/css" th:href="@{/css/search.css}">
+   <link rel="stylesheet" type="text/css" th:href="@{/css/elegant-icons.css}"> -->
+   
+ <!--    <link rel="stylesheet" th:href="@{/css/templatemo.css}"> -->
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slick.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slick-theme.css}">
+  
+ 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet" />
+   <!-- Responsive-->
+   <link rel="stylesheet" th:href="@{/css/responsive.css}">
+   <!-- fevicon -->
+   <link rel="icon" th:href="@{/images/fevicon.png}" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.min.css}">
+   <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" th:href="@{https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css}">
+   <!-- fonts -->
+   <link th:href="@{https://fonts.googleapis.com/css?family=Poppins:400,700|Righteous&display=swap}" rel="stylesheet">
+   <!-- owl stylesheets -->
+   <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+   <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css}"
+      media="screen">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      
+<!-- 각 페이지의 CSS가 작성될 위치 -->
+<th:block layout:fragment="css"></th:block>
+
+
+</head>
+<body>
+<div>
+	<div th:replace="fragments/header::header"></div>
+	<div layout:fragment="content" class="content"></div>
+	<div th:replace="fragments/footer::footer"></div>
+</div>
+
+<!--공통으로 쓰이는 js  -->
+	<script th:src="@{//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js}"></script>
+	<script th:src="@{//code.jquery.com/jquery-1.11.1.min.js}"></script>
+   <script th:src="@{/js/jquery.min.js}"></script>
+   <script th:src="@{/js/popper.min.js}"></script>
+<!--    <script th:src="@{/js/bootstrap.bundle.min.js}"></script> -->
+ <!--   <script th:src="@{/js/jquery-3.0.0.min.js}"></script> -->
+   <script th:src="@{/js/plugin.js}"></script>
+   <script th:src="@{/js/search.js}"></script>
+  
+  
+<!--    <script src="@{/js/extention/choices.js}"></script> -->
+   <script th:src="@{/js/memberForm.js}"></script>
+   
+    <script th:src="@{/js/jquery-1.11.0.min.js}"></script>
+    <script th:src="@{/js/jquery-migrate-1.2.1.min.js}"></script>
+    <script th:src="@{/js/bootstrap.bundle1.min.js}"></script>
+    <script th:src="@{/js/templatemo.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>  
+   
+   <!-- sidebar -->
+   <script th:src="@{/js/jquery.mCustomScrollbar.concat.min.js}"></script>
+   <script th:src="@{/js/custom.js}"></script>
+   <!-- javascript -->
+   <script th:src="@{https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js}"></script>
+
+<!-- 각 페이지의 스크립트가 작성될 위치 -->
+<th:block layout:fragment="script"></th:block>
+</body>
+</html>

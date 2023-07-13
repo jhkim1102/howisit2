@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout1}">
+	
+<th:block layout:fragment="css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/searchbar.css}">
+</th:block>
+
+		
+	<div layout:fragment="content">
+   <div class="services_section layout_padding">
+     <!--   <section class="hero spad set-bg" data-setbg="img/hero.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="#" class="filter__form">
+                        <div class="filter__form__item filter__form__item--search">
+                            <p>Location</p>
+                            <div class="filter__form__input">
+                                <input type="text" placeholder="Search Location">
+                                <span class="icon_search"></span>
+                            </div>
+                        </div>
+                        <div class="filter__form__item">
+                            <p>Check In</p>
+                            <div class="filter__form__datepicker">
+                                <span class="icon_calendar"></span>
+                                <input type="text" class="datepicker_pop check__in">
+                                <i class="arrow_carrot-down"></i>
+                            </div>
+                        </div>
+                        <div class="filter__form__item">
+                            <p>Check Out</p>
+                            <div class="filter__form__datepicker">
+                                <span class="icon_calendar"></span>
+                                <input type="text" class="datepicker_pop check__out">
+                                <i class="arrow_carrot-down"></i>
+                            </div>
+                        </div>
+                        <div class="filter__form__item filter__form__item--select">
+                            <p>Person</p>
+                            <div class="filter__form__select">
+                                <span class="icon_group"></span>
+                                <select>
+                                    <option value="">2 Adult, 1 Children</option>
+                                    <option value="">2 Adult</option>
+                                    <option value="">1 Adult</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit">BOOK NOW</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> -->
+      <div class="container">
+         <h1 class="services_taital">목록</h1>
+<!--          <p class="services_text">There are many variations of passages of Lorem Ipsum available, but the majority have
+            suffered alteration</p> -->
+         <div class="services_section_2">
+            <div class="row">
+               <div class="col-md-4">
+                  <div><img src="images/motel.png" class="services_img"></div>
+                  <div class="btn_main"><a href="/item/shop">모텔</a></div>
+               </div>
+               <div class="col-md-4">
+                  <div><img src="images/hotel.png" class="services_img"></div>
+                  <div class="btn_main active"><a href="/item/shop">호텔</a></div>
+               </div>
+               <div class="col-md-4">
+                  <div><img src="images/pansion.png" class="services_img"></div>
+                  <div class="btn_main"><a href="/item/shop">펜션</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- services section end -->
+  
+
+   <!-- client section start -->
+   <div class="client_section layout_padding">
+      <div class="container">
+         <h1 class="client_taital">추천목록</h1>
+         <div class="client_section_2">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+               <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+               </ol>
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="client_main">
+                        <div class="box_left">
+                           <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia</p>
+                        </div>
+                        <div class="box_right">
+                           <div class="client_taital_left">
+                              <div class="client_img"><img src="images/client-img.png"></div>
+ <!--                              <div class="quick_icon"><img src="images/quick-icon.png"></div> -->
+                           </div>
+                           <div class="client_taital_right">
+                              <h4 class="client_name">Dame</h4>
+                              <p class="customer_text">Customer</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="client_main">
+                        <div class="box_left">
+                           <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia</p>
+                        </div>
+                        <div class="box_right">
+                           <div class="client_taital_left">
+                              <div class="client_img"><img src="images/client-img.png"></div>
+                              <div class="quick_icon"><img src="images/quick-icon.png"></div>
+                           </div>
+                           <div class="client_taital_right">
+                              <h4 class="client_name">Dame</h4>
+                              <p class="customer_text">Customer</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="client_main">
+                        <div class="box_left">
+                           <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia</p>
+                        </div>
+                        <div class="box_right">
+                           <div class="client_taital_left">
+                              <div class="client_img"><img src="images/client-img.png"></div>
+                              <div class="quick_icon"><img src="images/quick-icon.png"></div>
+                           </div>
+                           <div class="client_taital_right">
+                              <h4 class="client_name">Dame</h4>
+                              <p class="customer_text">Customer</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- client section start -->
+   <!-- choose section start -->
+   <div class="choose_section layout_padding">
+      <div class="container">
+         <h1 class="choose_taital">Why Choose Us</h1>
+         <p class="choose_text">There are many variations of passages of Lorem Ipsum available, but the majority have
+            suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
+            believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+            embarrassing hidden in the middle of text. All </p>
+         <div class="read_bt_1"><a href="#">Read More</a>
+         
+         </div>
+
+      </div>
+   </div>		
+	</div>
+</html>
+
