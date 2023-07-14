@@ -13,44 +13,7 @@
 <div layout:fragment="content">
     <div class="container py-5">
         <div class="row">
-
-<!--             <div class="col-lg-3">
-                <h1 class="h2 pb-4">Categories</h1>
-                <ul class="list-unstyled templatemo-accordion">
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Gender
-                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Men</a></li>
-                            <li><a class="text-decoration-none" href="#">Women</a></li>
-                        </ul>
-                    </li>
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Sale
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Sport</a></li>
-                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        </ul>
-                    </li>
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Product
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Bag</a></li>
-                            <li><a class="text-decoration-none" href="#">Sweather</a></li>
-                            <li><a class="text-decoration-none" href="#">Sunglass</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> -->
-
+        <div class="col-md-12 order-1">
             <div class="col-lg-912">
                 <div class="row">
                     <div class="col-md-12">
@@ -67,23 +30,32 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="/images/no.1.jpg">
+                
+                
+                		<div class="row mb-5">
+					
+                    	<th:block th:each="item, status: ${items.getContent()}">
+                            <div class="card rounded-0 col-lg-6 col-md-6 item-entry mb-4">
+                            <a th:href="'/item/' + ${item.id}" class="product-item md-height bg-gray d-block">
+                                <img th:src="${item.imgUrl}" th:alt="${item.itemNm}" class="img-fluid">
+                            </a>
+                                
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
          <!--                            <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
                                     </ul> -->
-                                </div>
-                            </div>
+                                </div>       
                             <div class="card-body">
-                                <a href="#" class="h3 text-decoration-none">숙소명</a>
+                                <a th:href="'/item/' + ${item.id}" class="h3 text-decoration-none">[[${item.itemNm}]]</a>
+                                
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li>지역:</li>
+                                    
+                                    <li>
+                                    <del>[[${#numbers.formatInteger(item.price, 0, 'COMMA')}]]원</del>
+                                     &nbsp;&nbsp;[[${#numbers.formatInteger(item.price, 0, 'COMMA')}]]원
+                                    </li>
                                     <li class="pt-2">
                                         <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                         <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
@@ -103,25 +75,47 @@
                                 </ul>
                                 <p class="text-center mb-0">대실: 숙박:</p>
                             </div>
-                        </div>
-                    </div>
-          
+                        </div>          	
+                    	</th:block>
+          </div>
+        </div>
+                        
 
-                </div>
-<!--                 <div div="row">
-                    <ul class="pagination pagination-lg justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
-                        </li>
-                    </ul>
-                </div> -->
+                    
+             <div class="row">
+              <div class="col-md-12">
+               		<nav
+					th:with="start=${(items.number/maxPage)*maxPage + 1}
+			                 ,end=(${(items.totalPages == 0) ? 1 : (start + (maxPage - 1) < items.totalPages ? start + (maxPage - 1) : items.totalPages)})"
+							aria-label="Page navigation example">
+							<ul class="pagination d-flex justify-content-center">
+								<li class="page-item" th:classappend="${items.first}?'disabled'">
+									<a class="page-link"
+									th:href="@{'/item/shop' + '?searchQuery=' + ${itemSearchDto.searchQuery} 
+									                               + '&page=' + ${items.number - 1}}">이전</a>
+								</li>
+								
+								<li class="page-item"
+									th:each="page: ${#numbers.sequence(start, end)}"
+									th:classappend="${items.number eq page-1}?'active':''">
+									<a
+									class="page-link" th:inline="text"
+									th:href="@{'/item/shop' + '?searchQuery=' + ${itemSearchDto.searchQuery} 
+									                               + '&page=' + ${page - 1}}">[[${page}]]</a>
+								</li>
+								
+								<li class="page-item" th:classappend="${items.last}?'disabled'">
+									<a class="page-link"
+									th:href="@{'/item/shop' + '?searchQuery=' + ${itemSearchDto.searchQuery} 
+									                               + '&page=' + ${items.number + 1}}">다음</a>
+								</li>
+							</ul>
+					</nav>
+              </div>
             </div>
+         </div>
+        
+
 
         </div>
     </div>

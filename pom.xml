@@ -60,16 +60,20 @@
      		<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-jpa</artifactId>
 			<version>5.0.0</version>
-		<classifier>jakarta</classifier>
+			<classifier>jakarta</classifier>
 		</dependency>
 		<dependency>
 			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-apt</artifactId>
 			<version>5.0.0</version>
-		<classifier>jakarta</classifier>
+			<classifier>jakarta</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -79,7 +83,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-			<dependency>
+		<dependency>
     		<groupId>org.thymeleaf.extras</groupId>
     		<artifactId>thymeleaf-extras-springsecurity6</artifactId>
 		</dependency>
@@ -88,7 +92,7 @@
      		 <artifactId>modelmapper</artifactId>
      		 <version>3.1.0</version>
 		</dependency>
-	</dependencies>
+</dependencies>
 
 	<build>
 		<plugins>

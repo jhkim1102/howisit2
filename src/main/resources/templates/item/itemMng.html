@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layout2}">
 
 <th:block layout:fragment="css">
 	<style>
@@ -96,8 +96,9 @@
 								</li>
 							</ul>
 						</nav>
+				</div>
 							<div class="row" 
-						     th:object="${itemSearchDto}" style="height: 40px;">
+						     th:object="${itemSearchDto}" style="height: 140px;">
 							<div class="col-lg-2"></div>
 							<div class="col-lg-5" style="display:flex;">
 								<!-- 상품 등록일 -->
@@ -129,7 +130,6 @@
 							</div>
 							<div class="col-lg-2"></div>
 						</div>
-				</div>
 		</form>
 </div>
 

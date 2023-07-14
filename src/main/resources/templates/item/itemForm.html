@@ -35,12 +35,15 @@
 		
 	
 										
-              		<div class="form-group">
-    				<label th:for="itemNm" class="text-black">상태</label>
-						<input type="text" class="form-control" id="itemSellStatus" name="itemSellStatus"
-						th:field="*{itemSellStatus}" placeholder="SELL,SOLD_OUT을 입력해주세요" >
-						<p th:if="${#fields.hasErrors('itemSellStatus')}" th:errors="*{itemSellStatus}" class="fieldError">Incorrect Data</p>
-					</div>
+							<div class="form-group row">
+								<div class="col-md-12">
+								<label>상태</label>
+									<select class="form-select" th:field="*{itemSellStatus}" >
+										<option value="SELL">판매중</option>
+										<option value="SOLD_OUT">품절</option>
+									</select>
+								</div>
+							</div>
               		<div class="form-group">
     				<label th:for="itemNm" class="text-black">상품명</label>
 						<input type="text" class="form-control" id="name" name="name"
