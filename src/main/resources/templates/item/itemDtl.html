@@ -14,9 +14,17 @@
         <div class="container pb-5">
             <div class="row">
                 <div class="col-lg-5 mt-5">
+                
+                	<input type="hidden" id="itemId" th:value="${item.id}">
                     <div class="card mb-3" style="margin-top:10%">
-                        <img class="card-img img-fluid" src="/images/thum1.jpg" alt="Card image cap" id="product-detail">
+                    	<a href="#">
+                        <img class="card-img img-fluid" th:src="${item.itemImgDtoList[0].imgUrl}" 
+                        th:alt="${item.itemNm}" id="product-detail">
+                    	</a>
+                        
                     </div>
+                    
+                    
                     <div class="row">
                         <!--Start Controls-->
                         <div class="col-1 align-self-center">
