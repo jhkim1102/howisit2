@@ -69,7 +69,7 @@
                     <p th:if="${#fields.hasErrors('itemDetail')}" th:errors="*{itemDetail}" class="fieldError">Incorrect Data</p>
                              
                     </div>
-                    <div class="form-group" th:each="num: ${#numbers.sequence(1,5)}">
+                    <div class="form-group" th:each="num: ${#numbers.sequence(1,6)}">
 					<label th:text="상품이미지 + ${num}" class="text-black"  for="formFile"></label>
 					<input type="file" class="form-control" id="itemImgFile" name="itemImgFile">
 					</div>

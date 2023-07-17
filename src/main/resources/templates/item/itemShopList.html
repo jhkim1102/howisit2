@@ -39,14 +39,7 @@
                             <a th:href="'/item/' + ${item.id}" class="product-item md-height bg-gray d-block">
                                 <img th:src="${item.imgUrl}" th:alt="${item.itemNm}" class="img-fluid">
                             </a>
-                                
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-         <!--                            <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
-                                    </ul> -->
-                                </div>       
+            
                             <div class="card-body">
                                 <a th:href="'/item/' + ${item.id}" class="h3 text-decoration-none">[[${item.itemNm}]]</a>
                                 
@@ -76,7 +69,7 @@
                                 <p class="text-center mb-0">대실: 숙박:</p>
                             </div>
                         </div>          	
-                    	</th:block>
+                   </th:block>
           </div>
         </div>
                         
