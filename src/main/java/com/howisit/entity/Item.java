@@ -36,29 +36,32 @@ public class Item extends BaseEntity {
 	@Column(nullable = false)
 	private int price; //가격 --> price
 	
+	@Column(nullable = false, length = 100) //not null여부, 컬럼 크기지정
+	private String address; //숙소명 --> Address
+	
 	@Column(nullable = false)
 	private int stockNumber; //재고수량 --> stock_Number
 	
 	@Lob //clob과 같은 큰타입의 문자타입으로 컬럼을 만든다
-	@Column(nullable = false)
+	@Column(nullable = false, length = 500)
 	private String itemDetail; //상품상세설명 --> item_Detail
 	
 	@Enumerated(EnumType.STRING) //enum의 이름을 DB에 저장
 	private ItemSellStatus itemSellStatus; //판매상태 (sell,sold out) --> item_Sell_Status
 	
-	/*
-	 * @Column(nullable = false) private String location; //지역명 --> location
-	 * 
-	 * @Enumerated(EnumType.STRING) private ItemType itemType; // 숙박여부(rent,stay)
-	 * --> item_Type
-	 */	
+	@Enumerated(EnumType.STRING) //enum의 이름을 DB에 저장
+	private ItemType itemtype; //숙박시설 (MOTEL,HOTEL,PANSION) --> item_Type
+	
+
 	//item 엔티티 수정
 	public void updateItem(ItemFormDto itemFormDto) {
 		this.itemNm = itemFormDto.getItemNm();
 		this.price = itemFormDto.getPrice();
+		this.address = itemFormDto.getAddress();
 		this.stockNumber = itemFormDto.getStockNumber();
 		this.itemDetail = itemFormDto.getItemDetail();
 		this.itemSellStatus = itemFormDto.getItemSellStatus();
+		this.itemtype = itemFormDto.getItemType();
 	}
 	
 	//재고를 감소시킨다.

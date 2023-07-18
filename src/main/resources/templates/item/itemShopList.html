@@ -42,13 +42,11 @@
             
                             <div class="card-body">
                                 <a th:href="'/item/' + ${item.id}" class="h3 text-decoration-none">[[${item.itemNm}]]</a>
+                                <br>
                                 
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                     
-                                    <li>
-                                    <del>[[${#numbers.formatInteger(item.price, 0, 'COMMA')}]]원</del>
-                                     &nbsp;&nbsp;[[${#numbers.formatInteger(item.price, 0, 'COMMA')}]]원
-                                    </li>
+                                   
                                     <li class="pt-2">
                                         <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                         <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
@@ -62,11 +60,11 @@
                                         <i class="text-warning fa fa-star"></i>
                                         <i class="text-warning fa fa-star"></i>
                                         <i class="text-warning fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
                                     </li>
                                 </ul>
-                                <p class="text-center mb-0">대실: 숙박:</p>
+                                <p class="text-center mb-0"></p>
                             </div>
                         </div>          	
                    </th:block>

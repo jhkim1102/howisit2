@@ -274,7 +274,7 @@ button {
 
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: 2px solid #fff;
     color: #fff;
 }

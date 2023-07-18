@@ -3,11 +3,54 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layouts/info}">
 
+<head>
+	<meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+
 <th:block layout:fragment="css">
 <style>
 .badge-primary {
 	color: #fff;
 	background-color: #ee4266
+}
+.form-control {
+	width:20%;
+}
+.list-inline>li {
+	padding-right:0;
+}
+.rooms-page-item {
+    -webkit-box-shadow: 2px 15px 75px 6px #EBEBEB;
+    box-shadow: 2px 15px 75px 6px #EBEBEB;
+    margin-top: 100px;
+}
+h3,.h3 {
+    font-size: 24px;
+    margin-top: 5%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 80%;
+    max-width: 80%;
+    padding-right: calc(var(--bs-gutter-x)/2);
+    padding-left: calc(var(--bs-gutter-x)/2);
+    margin-top: var(--bs-gutter-y);
+}
+.btn-success {
+    color: #fff;
+    background-color: red;
+    border-color: #4cae4c
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    justify-content: center;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 2.25rem;
 }
 </style>
 </th:block>
@@ -46,44 +89,57 @@
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-4">
+                                    	<input type="hidden" id="itemId" th:value="${item.id}">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="/images/thum1.jpg" alt="Product Image 1">
+                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[0].imgUrl}" 
+                                                th:alt="${item.itemNm}" id="product-detail">
                                             </a>
                                         </div>
-                                        <div class="col-4">
+                                        
+                                         <div class="col-4">
+                                    	<input type="hidden" id="itemId" th:value="${item.id}">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="/images/thum2.jpg" alt="Product Image 2">
+                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[1].imgUrl}" 
+                                                th:alt="${item.itemNm}" id="product-detail">
                                             </a>
                                         </div>
-                                        <div class="col-4">
+                                         <div class="col-4">
+                                    	<input type="hidden" id="itemId" th:value="${item.id}">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="/images/thum3.jpg" alt="Product Image 3">
+                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[2].imgUrl}" 
+                                                th:alt="${item.itemNm}" id="product-detail">
                                             </a>
-                                        </div>
+                                        </div> 
                                     </div>
                                 </div>
                                 <!--/.First slide-->
 
                                 <!--Second slide-->
-                                 <div class="carousel-item">
+                                  <div class="carousel-item">
                                     <div class="row">
-                                        <div class="col-4">
+                                          <div class="col-4">
+                                    	<input type="hidden" id="itemId" th:value="${item.id}">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="/images/thum4.jpg" alt="Product Image 4">
+                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[3].imgUrl}" 
+                                                th:alt="${item.itemNm}" id="product-detail">
                                             </a>
                                         </div>
                                         <div class="col-4">
+                                    	<input type="hidden" id="itemId" th:value="${item.id}">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="/images/thum5.jpg" alt="Product Image 5">
+                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[4].imgUrl}" 
+                                                th:alt="${item.itemNm}" id="product-detail">
                                             </a>
                                         </div>
                                         <div class="col-4">
+                                    	<input type="hidden" id="itemId" th:value="${item.id}">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="/images/thum6.jpg" alt="Product Image 6">
+                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[5].imgUrl}" 
+                                                th:alt="${item.itemNm}" id="product-detail">
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                             <!--End Slides-->
                         </div>
@@ -103,59 +159,59 @@
                     <div class="card" style="margin-top:7%">
                         <div class="card-body">
                         	<span th:text="${item.itemSellStatus}" class="badge badge-primary mgb-15"></span> 
-                            <h1 class="h2">상품설명</h1>
-                            <p class="h3 py-2"  th:text="${item.itemNm}"></p>
+                        	<span th:text="${item.itemType}" class="badge badge-primary mgb-15"></span> 
+                            
+                            <p class="h3 py-2" style="font-weight: 900;"  th:text="${item.itemNm}"></p>
                             <p class="py-2">
+                                <span class="list-inline-item text-dark">평점:</span>
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-warning"></i>
-                                <span class="list-inline-item text-dark">Rating 5.0</span>
                             </p>
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <h6>지역명:</h6>
-                                </li>
-                                <li class="list-inline-item">
-                                    <p class="text-muted"><strong></strong></p>
-                                </li>
-                            </ul>
+                        
 
-                            <h6>소개글:</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+                            <p>
+                            	<span th:text="|주소:&nbsp|+${item.address}"></span>
+                            </p>
+                           &nbsp;
+                            <h5>소개글:</h5>
+                            <p style="max- width:376px;">
+                            	<span th:text="${item.itemDetail}"></span>
+                            </p>
 
                                 <input type="hidden" name="product-title" value="Activewear">
                                 <div class="row">
-                                     <div class="col-auto">
-
-                                    </div> 
-                                    <div class="col-auto">
+                        
+                     <!--                <div class="col-auto">
                                     
                                         <ul class="list-inline pb-3">
                                         
                                             <li class="list-inline-item text-right">
-                                                수량
+                                                수량입력:
                                             </li>
                                             
                                             <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">&minus;</span></li>
                                             
-                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                            <li class="list-inline-item"><input type="text" class="form-control text-center" id="count" value="1"></li>
                                             
                                             <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">&plus;</span></li>
                                         </ul>
                                         
                                             <p>
 												<input type="hidden" th:value="${item.price}"  id="price" name="price">
-												<strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong>
+												<strong class="text-primary h4" th:text="|가격:|+|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong>
 											</p>
 										<div>
 											<h5 style="display: inline-block; margin-right: 15px; color:black; font-weight:bold;'">총 상품 금액</h5>
 											<strong id="totalPrice" class="text-primary h4"></strong>
 										</div>
                                     </div>
-                                </div>
-                                <div class="row pb-3">
+                                </div> -->
+                                
+                                
+<!--                                 <div class="row pb-3">
                                     <div class="col d-grid">
 
                                         <button type="button" class="btn btn-success btn-lg" name="submit" value="addtocard">장바구니 담기</button>     
@@ -168,14 +224,204 @@
                                     <p th:unless="${#strings.equals(item.itemSellStatus, 'SELL')}">
 										해당 상품은 현재 품절입니다.
 									</p>
-                                </div>
+                                </div>  -->
 
 
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            				
+            				<div class="md-12">
+					        	<div class="rooms-page-item">
+					                <div class="row">
+					                    <div class="col-lg-4">
+					                        <div>
+					                            <div class="single-room-pic">
+					                                <input type="hidden" id="itemId" th:value="${item.id}">
+		                                            <a href="#">
+		                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[2].imgUrl}" 
+		                                                th:alt="${item.itemNm}" id="product-detail" style="margin:5%; width:376p;">
+		                                            </a>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="col-lg-8">
+					                        <div class="room-text" style="margin-left:10%; border-bottom: 1px solid rgba(0,0,0,0.08);">
+					                            <div class="room-title">
+					                                <h3><strong>디럭스 싱글</strong></h3>
+					                                <br>
+					                                <div class="room-price" style="display:flex;">
+					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
+					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*0.8, 0, 'COMMA')}원|"></strong></h4>
+												    </div>
+					                            </div>
+					                        </div>
+					                        		<br>					                        		
+					                             <div class="row pb-3">
+				                                  <!--   <div class="col d-grid">
+				
+				                                        <button type="button" class="btn btn-success btn-lg" name="submit" value="addtocard">장바구니 담기</button>     
+				                                    </div> -->
+				                                    <input type="hidden" class="form-control text-center" id="count" value="1">
+				                                    
+				                                        <button type="button" class="btn btn-success btn-lg" onclick="order()"
+				                                        style="width:25%; margin-left:65%;">예약하기</button>
+				                                    
+				
+				                                    
+				                                    <p th:unless="${#strings.equals(item.itemSellStatus, 'SELL')}">
+														해당 상품은 현재 품절입니다.
+													</p>
+                                				</div> 
+					                    </div>
+					                </div>
+					            </div>
+					            
+					            <div class="rooms-page-item">
+					                <div class="row">
+					                    <div class="col-lg-4">
+					                        <div>
+					                            <div class="single-room-pic">
+					                                <input type="hidden" id="itemId" th:value="${item.id}">
+		                                            <a href="#">
+		                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[3].imgUrl}" 
+		                                                th:alt="${item.itemNm}" id="product-detail" style="margin:5%; width:376p;">
+		                                            </a>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="col-lg-8">
+					                        <div class="room-text" style="margin-left:10%; border-bottom: 1px solid rgba(0,0,0,0.08);">
+					                            <div class="room-title">
+					                                <h3><strong>디럭스 트윈</strong></h3>
+					                                <br>
+					                                <div class="room-price" style="display:flex;">
+					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
+					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong></h4>
+												    </div>
+					                            </div>
+					                        </div>
+					                        		<br>
+					                        		<br>
+					                             <div class="row pb-3">
+				                                  <!--   <div class="col d-grid">
+				
+				                                        <button type="button" class="btn btn-success btn-lg" name="submit" value="addtocard">장바구니 담기</button>     
+				                                    </div> -->
+				                                    <input type="hidden" class="form-control text-center" id="count" value="1">
+				                                    
+				                                        <button type="button" class="btn btn-success btn-lg" onclick="order()"
+				                                        style="width:25%; margin-left:65%;">예약하기</button>
+				                                    
+				
+				                                    
+				                                    <p th:unless="${#strings.equals(item.itemSellStatus, 'SELL')}">
+														해당 상품은 현재 품절입니다.
+													</p>
+                                				</div> 
+					                    </div>
+					                </div>
+					            </div>
+					            
+					            <div class="rooms-page-item">
+					                <div class="row">
+					                    <div class="col-lg-4">
+					                        <div>
+					                            <div class="single-room-pic">
+					                                <input type="hidden" id="itemId" th:value="${item.id}">
+		                                            <a href="#">
+		                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[4].imgUrl}" 
+		                                                th:alt="${item.itemNm}" id="product-detail" style="margin:5%; width:376p;">
+		                                            </a>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="col-lg-8">
+					                        <div class="room-text" style="margin-left:10%; border-bottom: 1px solid rgba(0,0,0,0.08);">
+					                            <div class="room-title">
+					                                <h3><strong>슈페리얼 싱글</strong></h3>
+					                                <br>
+					                                <div class="room-price" style="display:flex;">
+					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
+					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*1.2, 0, 'COMMA')}원|"></strong></h4>
+												    </div>
+					                            </div>
+					                        </div>
+					                        		<br>
+					                        		<br>
+					                             <div class="row pb-3">
+				                                  <!--   <div class="col d-grid">
+				
+				                                        <button type="button" class="btn btn-success btn-lg" name="submit" value="addtocard">장바구니 담기</button>     
+				                                    </div> -->
+				                                    <input type="hidden" class="form-control text-center" id="count" value="1">
+				                                    
+				                                        <button type="button" class="btn btn-success btn-lg" onclick="order()"
+				                                        style="width:25%; margin-left:65%;">예약하기</button>
+				                                    
+				
+				                                    
+				                                    <p th:unless="${#strings.equals(item.itemSellStatus, 'SELL')}">
+														해당 상품은 현재 품절입니다.
+													</p>
+                                				</div> 
+					                    </div>
+					                </div>
+					            </div>
+					            
+					            <div class="rooms-page-item">
+					                <div class="row">
+					                    <div class="col-lg-4">
+					                        <div>
+					                            <div class="single-room-pic">
+					                                <input type="hidden" id="itemId" th:value="${item.id}">
+		                                            <a href="#">
+		                                                <img class="card-img img-fluid" th:src="${item.itemImgDtoList[5].imgUrl}" 
+		                                                th:alt="${item.itemNm}" id="product-detail" style="margin:5%; width:376p;">
+		                                            </a>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <div class="col-lg-8">
+					                        <div class="room-text" style="margin-left:10%; border-bottom: 1px solid rgba(0,0,0,0.08);">
+					                            <div class="room-title">
+					                                <h3><strong>슈페리얼 트윈</strong></h3>
+					                                <br>
+					                                <div class="room-price" style="display:flex;">
+					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
+					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*1.5, 0, 'COMMA')}원|"></strong></h4>
+												    </div>
+					                            </div>
+					                        </div>
+					                        		<br>
+					                        		<br>
+					                             <div class="row pb-3">
+				                                  <!--   <div class="col d-grid">
+				
+				                                        <button type="button" class="btn btn-success btn-lg" name="submit" value="addtocard">장바구니 담기</button>     
+				                                    </div> -->
+				                                    <input type="hidden" class="form-control text-center" id="count" value="1">
+				                                    
+				                                        <button type="button" class="btn btn-success btn-lg" onclick="order()"
+				                                        style="width:25%; margin-left:65%;">예약하기</button>
+				                                    
+				
+				                                    
+				                                    <p th:unless="${#strings.equals(item.itemSellStatus, 'SELL')}">
+														해당 상품은 현재 품절입니다.
+													</p>
+                                				</div> 
+					                    </div>
+					                </div>
+					            </div>
+            				
+            				</div>
+			        
     </section>
 </div>
 

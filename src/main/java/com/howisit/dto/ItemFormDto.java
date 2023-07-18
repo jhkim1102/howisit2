@@ -6,6 +6,7 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 
 import com.howisit.constant.ItemSellStatus;
+import com.howisit.constant.ItemType;
 import com.howisit.entity.Item;
 
 import jakarta.validation.constraints.*;
@@ -21,6 +22,9 @@ public class ItemFormDto {
 	
 	@NotNull(message = "가격은 필수 입력입니다.")
 	private int price;
+	
+	@NotNull(message = "주소는 필수 입력입니다.")
+	private String address;
 
 	@NotNull(message = "재고는 필수 입력입니다.")
 	private int stockNumber; 
@@ -29,6 +33,8 @@ public class ItemFormDto {
 	private String itemDetail;
 	
 	private ItemSellStatus itemSellStatus;
+	
+	private ItemType itemType;
 	
 	//상품 이미지 정보를 저장
 	private List<ItemImgDto> itemImgDtoList = new ArrayList<>();

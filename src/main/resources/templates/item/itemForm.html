@@ -42,6 +42,12 @@
 										<option value="SELL">판매중</option>
 										<option value="SOLD_OUT">품절</option>
 									</select>
+								<label>종류</label>
+									<select class="form-select" th:field="*{itemType}" >
+										<option value="MOTEL">모텔</option>
+										<option value="HOTEL">호텔</option>
+										<option value="PANSION">팬션</option>
+									</select>
 								</div>
 							</div>
               		<div class="form-group">
@@ -62,10 +68,16 @@
 						th:field="*{stockNumber}"placeholder="Mobile Number" >
 						<p th:if="${#fields.hasErrors('stockNumber')}" th:errors="*{stockNumber}" class="fieldError">Incorrect Data</p>
 					</div>
+					<div class="form-group">
+					<label th:for="address" class="text-black">주소</label>
+						<input type="text" class="form-control" id="email" name="email" 
+						th:field="*{address}"placeholder="address">
+						<p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">Incorrect Data</p>
+					</div>
                     <div class="form-group">
                     <label th:for="itemDetail" class="text-black">상품 상세내용</label>
                     <textarea class="form-control" type="textarea" id="message" 
-                    th:field="*{itemDetail}" placeholder="Message" maxlength="140" rows="7"></textarea>
+                    th:field="*{itemDetail}" placeholder="Message" maxlength="500" rows="10"></textarea>
                     <p th:if="${#fields.hasErrors('itemDetail')}" th:errors="*{itemDetail}" class="fieldError">Incorrect Data</p>
                              
                     </div>

@@ -1,5 +1,6 @@
 package com.howisit.constant;
 
 public enum ItemType {
-	RENT,STAY
+	MOTEL,HOTEL,PENSION
 }
+	
