@@ -5,56 +5,29 @@
 	
 <th:block layout:fragment="css">
 <link rel="stylesheet" type="text/css" th:href="@{/css/searchbar.css}">
+<style>
+.banner{
+	width:962px;
+	height:320px;
+	margin: 64px auto 78px auto;
+	display: block;
+    overflow: hidden;
+    background-size: cover;
+    text-align: center;
+    background-image:url('images/b1.png'); 	
+}
+
+.box_right {
+    width: 48%;
+    float: right;
+    margin-left: 30px;
+}
+</style>
 </th:block>
 
 		
 	<div layout:fragment="content">
    <div class="services_section layout_padding">
-     <!--   <section class="hero spad set-bg" data-setbg="img/hero.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="#" class="filter__form">
-                        <div class="filter__form__item filter__form__item--search">
-                            <p>Location</p>
-                            <div class="filter__form__input">
-                                <input type="text" placeholder="Search Location">
-                                <span class="icon_search"></span>
-                            </div>
-                        </div>
-                        <div class="filter__form__item">
-                            <p>Check In</p>
-                            <div class="filter__form__datepicker">
-                                <span class="icon_calendar"></span>
-                                <input type="text" class="datepicker_pop check__in">
-                                <i class="arrow_carrot-down"></i>
-                            </div>
-                        </div>
-                        <div class="filter__form__item">
-                            <p>Check Out</p>
-                            <div class="filter__form__datepicker">
-                                <span class="icon_calendar"></span>
-                                <input type="text" class="datepicker_pop check__out">
-                                <i class="arrow_carrot-down"></i>
-                            </div>
-                        </div>
-                        <div class="filter__form__item filter__form__item--select">
-                            <p>Person</p>
-                            <div class="filter__form__select">
-                                <span class="icon_group"></span>
-                                <select>
-                                    <option value="">2 Adult, 1 Children</option>
-                                    <option value="">2 Adult</option>
-                                    <option value="">1 Adult</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="submit">BOOK NOW</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
       <div class="container">
          <h1 class="services_taital">목록</h1>
 <!--          <p class="services_text">There are many variations of passages of Lorem Ipsum available, but the majority have
@@ -98,27 +71,18 @@
                  				<div><img src="images/m1.png" class="services_img" style="width:400px; height:280px;"></div>
                         </div>
                         <div class="box_right">
-                           <div class="client_taital_left">
-                            	test
-                           </div>
-                           <div class="client_taital_right">
-                     	
-                           </div>
+
                         </div>
                      </div>
                   </div>
+                  
                   <div class="carousel-item">
                      <div class="client_main">
                         <div class="box_left">
      						<div><img src="images/h1.png" class="services_img" style="width:400px; height:280px;"></div>
                         </div>
                         <div class="box_right">
-                           <div class="client_taital_left">
-                             	test
-                           </div>
-                           <div class="client_taital_right">
-                      
-                           </div>
+         
                         </div>
                      </div>
                   </div>
@@ -128,12 +92,7 @@
                				<div><img src="images/p1.png" class="services_img" style="width:400px; height:280px;"></div>
                         </div>
                         <div class="box_right">
-                           <div class="client_taital_left">
-                     			test
-                           </div>
-                           <div class="client_taital_right">
-    
-                           </div>
+
                         </div>
                      </div>
                   </div>
@@ -146,11 +105,17 @@
    <!-- choose section start -->
    <div class="choose_section layout_padding">
       <div class="container">
-         <h1 class="choose_taital">Why Choose Us</h1>
-         <p class="choose_text">There are many variations of passages of Lorem Ipsum available, but the majority have
-            suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-            embarrassing hidden in the middle of text. All </p>
+         <h1 class="choose_taital"></h1>
+      	<div class="banner">
+      		<p style= "margin-top:10%; font-size:28px; font-weight:700;">
+      		앱 다운 받고 더 많은 혜택받으세요.     		
+      		</p>
+      		
+      		<div style="margin-top:30px;">
+      			<img src="images/google.png" style="width:168px; height:auto; margin-right:20px">
+      			<img src="images/apple.png" style="width:168px; height:auto;">
+      		</div>
+      	</div>
          <div class="read_bt_1"><a href="#">Read More</a>
          
          </div>

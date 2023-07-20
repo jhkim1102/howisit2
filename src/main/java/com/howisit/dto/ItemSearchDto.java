@@ -2,6 +2,7 @@ package com.howisit.dto;
 
 
 import com.howisit.constant.ItemSellStatus;
+import com.howisit.constant.ItemType;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ItemSearchDto {
+	private ItemType searchItemType;
 	private String searchDateType;
 	private ItemSellStatus searchSellStatus;
 	private String searchBy;
