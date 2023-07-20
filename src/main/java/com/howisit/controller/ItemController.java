@@ -55,6 +55,8 @@ public class ItemController {
 	}
 	
 	
+	
+	
 	//상품등록 페이지
 	@GetMapping(value = "/admin/item/new")
 	public String itemForm(Model model) {
