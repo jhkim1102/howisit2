@@ -2,6 +2,9 @@ package com.howisit.entity;
 
 
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -20,7 +23,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CartItem {
+public class CartItem extends BaseEntity{
 	@Id
 	@Column(name="cart_item_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,7 +36,20 @@ public class CartItem {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="item_id")
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Item item;
 	
 	private int count;
+	
+	public static CartItem createCartItem(Cart cart, Item item, int count) {
+		CartItem cartItem = new CartItem();
+		cartItem.setCart(cart);
+		cartItem.setItem(item);
+		cartItem.setCount(count);
+		return cartItem;
+	}
+	
+	public void addCount(int count) {
+		this.count += count;
+	}
 }

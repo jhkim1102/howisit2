@@ -27,6 +27,7 @@ public class OrderItem extends BaseEntity {
 	
 	private int orderPrice; //주문가격
 	
+	
 	private int count; //수량
 	
 	//주문할 상품하고 주문 수량을 통해 orderItem객체를 만듬

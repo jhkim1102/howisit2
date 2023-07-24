@@ -26,6 +26,7 @@ public class Order {
 	@Enumerated(EnumType.STRING)
 	private OrderStatus orderStatus; //주문상태
 	
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="member_id")
 	private Member member;
