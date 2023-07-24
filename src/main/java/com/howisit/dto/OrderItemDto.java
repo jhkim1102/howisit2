@@ -18,7 +18,9 @@ public class OrderItemDto {
 		this.orderPrice = orderItem.getOrderPrice();
 		this.imgUrl = imgUrl;
 		this.address = orderItem.getItem().getAddress();
+		this.id = orderItem.getItem().getId();
 	}
+	private Long id;
 	
 	private String address; //주소
 	

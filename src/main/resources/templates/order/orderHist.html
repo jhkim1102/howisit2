@@ -39,11 +39,12 @@
                     <tr>
                         <td class="col-sm-8 col-md-6">
                         <div class="media" th:each="orderItem: ${order.orderItemDtoList}">
-     
-  
+     					
+  						<a th:href="'/item/' + ${orderItem.id}">
                             <img class="rounded repImg" style="width: 150px; height: 150px;
                             margin-right: 30px;"
-                            th:src="${orderItem.imgUrl}" th:alt="${orderItem.itemNm}">                                                    		
+                            th:src="${orderItem.imgUrl}" th:alt="${orderItem.itemNm}">                                                    		 						
+  						</a>
      
                           
    
@@ -125,7 +126,7 @@
 									th:href="@{'/orders/' + ${orders.number + 1}}">다음</a>
 								</li>
 								
-							</ul>
+							</ul>	
 						</nav>
 					</div>
         </div>
