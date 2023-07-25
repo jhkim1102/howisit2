@@ -33,8 +33,15 @@ public class Item extends BaseEntity {
 	@Column(nullable = false, length = 50) //not null여부, 컬럼 크기지정
 	private String itemNm; //숙소명 --> item_Nm
 	
+	/*
+	 * @Column(nullable = false, length = 50) //not null여부, 컬럼 크기지정 private String
+	 * roomNm; // 방이름--> room_Nm
+	 */	
 	@Column(nullable = false)
 	private int price; //가격 --> price
+	private int price2; //가격 --> price
+	private int price3; //가격 --> price
+	private int price4; //가격 --> price
 	
 	@Column(nullable = false, length = 100) //not null여부, 컬럼 크기지정
 	private String address; //숙소명 --> Address
@@ -57,11 +64,15 @@ public class Item extends BaseEntity {
 	public void updateItem(ItemFormDto itemFormDto) {
 		this.itemNm = itemFormDto.getItemNm();
 		this.price = itemFormDto.getPrice();
+		this.price2 = itemFormDto.getPrice2();
+		this.price3 = itemFormDto.getPrice3();
+		this.price4 = itemFormDto.getPrice4();
 		this.address = itemFormDto.getAddress();
 		this.stockNumber = itemFormDto.getStockNumber();
 		this.itemDetail = itemFormDto.getItemDetail();
 		this.itemSellStatus = itemFormDto.getItemSellStatus();
 		this.itemtype = itemFormDto.getItemType();
+		/* this.roomNm = itemFormDto.getRoomNm(); */
 	}
 	
 	//재고를 감소시킨다.

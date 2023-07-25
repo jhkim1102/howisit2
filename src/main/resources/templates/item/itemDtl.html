@@ -210,7 +210,7 @@ h3,.h3 {
 					                                <div class="room-price" style="display:flex;">
 					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
 					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
-														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*0.8, 0, 'COMMA')}원|"></strong></h4>
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong></h4>
 												    </div>
 					                            </div>
 					                        </div>
@@ -255,8 +255,8 @@ h3,.h3 {
 					                                <br>
 					                                <div class="room-price" style="display:flex;">
 					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
-					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
-														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong></h4>
+					                                    <input type="hidden" th:value="${item.price2}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price2, 0, 'COMMA')}원|"></strong></h4>
 												    </div>
 					                            </div>
 					                        </div>
@@ -302,8 +302,8 @@ h3,.h3 {
 					                                <br>
 					                                <div class="room-price" style="display:flex;">
 					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
-					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
-														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*1.2, 0, 'COMMA')}원|"></strong></h4>
+					                                    <input type="hidden" th:value="${item.price3}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price3, 0, 'COMMA')}원|"></strong></h4>
 												    </div>
 					                            </div>
 					                        </div>
@@ -349,8 +349,8 @@ h3,.h3 {
 					                                <br>
 					                                <div class="room-price" style="display:flex;">
 					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
-					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
-														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*1.5, 0, 'COMMA')}원|"></strong></h4>
+					                                    <input type="hidden" th:value="${item.price4}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price4, 0, 'COMMA')}원|"></strong></h4>
 												    </div>
 					                            </div>
 					                        </div>
@@ -413,7 +413,7 @@ h3,.h3 {
         ]
     });
 	
-	$(document).ready(function() {
+/* 	$(document).ready(function() {
 		//처음 상세페이지 화면에 들어올때 총 상품금액이 보여야 하므로
 		calculateTotalPrice(); 
 		
@@ -428,7 +428,7 @@ h3,.h3 {
 		var price = $("#price").val(); //가격
 		var totalPrice = (price * count).toLocaleString('ko-KR'); //천단위 콤마
 		$("#totalPrice").html(totalPrice + '원'); //총가격 출력
-	}
+	} */
 	
 	function order() {
 		var token = $("meta[name='_csrf']").attr("content");
@@ -441,6 +441,10 @@ h3,.h3 {
 				itemId : $("#itemId").val(), //item의 id
 				count: $("#count").val() //수량
 		}
+		
+		
+		
+		
 		
 		//★전달하기 전에 데이터를 반드시 JSON -> 문자열로 만들어야 한다.
 		var param = JSON.stringify(paramData);

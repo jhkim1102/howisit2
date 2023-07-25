@@ -20,12 +20,21 @@ public class ItemFormDto {
 	@NotBlank(message = "상품명은 필수 입력입니다.")
 	private String itemNm;
 	
-	@NotNull(message = "가격은 필수 입력입니다.")
+	@NotNull(message = "가격1은 필수 입력입니다.")
 	private int price;
+
+	private int price2;
+
+	private int price3;
+
+	private int price4;
 	
 	@NotNull(message = "주소는 필수 입력입니다.")
 	private String address;
-
+	
+	/*
+	 * private String roomNm; //방 이름
+	 */
 	@NotNull(message = "재고는 필수 입력입니다.")
 	private int stockNumber; 
 	
@@ -36,8 +45,11 @@ public class ItemFormDto {
 	
 	private ItemType itemType;
 	
+	
+	
 	//상품 이미지 정보를 저장
 	private List<ItemImgDto> itemImgDtoList = new ArrayList<>();
+	
 	
 	//상품 이미지 아이디들을 저장 -> 수정시에 이미지 아이디들을 담아둘 용도.
 	private List<Long> itemImgIds = new ArrayList<>();

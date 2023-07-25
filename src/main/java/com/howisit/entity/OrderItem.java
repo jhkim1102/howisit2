@@ -36,6 +36,7 @@ public class OrderItem extends BaseEntity {
 		orderItem.setItem(item);
 		orderItem.setCount(count);
 		orderItem.setOrderPrice(item.getPrice());
+
 		
 		item.removeStock(count); //재고감소
 		
