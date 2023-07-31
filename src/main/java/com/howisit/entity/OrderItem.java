@@ -1,7 +1,5 @@
 package com.howisit.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.*;
 import lombok.*;
 

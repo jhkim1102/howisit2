@@ -62,24 +62,7 @@
 						th:field="*{price}"placeholder="price">
 						<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="fieldError">Incorrect Data</p>
 					</div>
-					<div class="form-group">
-					<label th:for="price2" class="text-black">가격2</label>
-						<input type="text" class="form-control" id="email" name="email" 
-						th:field="*{price2}"placeholder="price2">
-						<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="fieldError">Incorrect Data</p>
-					</div>
-					<div class="form-group">
-					<label th:for="price3" class="text-black">가격3</label>
-						<input type="text" class="form-control" id="email" name="email" 
-						th:field="*{price3}"placeholder="price3">
-						<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="fieldError">Incorrect Data</p>
-					</div>
-					<div class="form-group">
-					<label th:for="price4" class="text-black">가격4</label>
-						<input type="text" class="form-control" id="email" name="email" 
-						th:field="*{price4}"placeholder="price4">
-						<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="fieldError">Incorrect Data</p>
-					</div>
+	
 					<div class="form-group">
 					<label th:for="stockNumber" class="text-black">재고</label>
 						<input type="text" class="form-control" id="mobile" name="mobile" 
