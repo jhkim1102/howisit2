@@ -183,7 +183,7 @@ h3,.h3 {
                             <input type="hidden" class="form-control text-center" id="count" value="1">
                             
                       		<button type="button" class="btn btn-success btn-lg" onclick="cart()"
-				             style="width:25%;">장바구니 담기</button>
+				             style="width:25%; margin-left:75%;">장바구니 담기</button>
 
                                 <input type="hidden" name="product-title" value="Activewear">
                                 <div class="row">
@@ -259,8 +259,8 @@ h3,.h3 {
 					                                <br>
 					                                <div class="room-price" style="display:flex;">
 					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
-					                                    <input type="hidden" th:value="${item.price2}"  id="price" name="price">
-														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong></h4>
+					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*1.25, 0, 'COMMA')}원|"></strong></h4>
 												    </div>
 					                            </div>
 					                        </div>
@@ -305,8 +305,8 @@ h3,.h3 {
 					                                <br>
 					                                <div class="room-price" style="display:flex;">
 					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
-					                                    <input type="hidden" th:value="${item.price3}"  id="price" name="price">
-														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong></h4>
+					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*1.5, 0, 'COMMA')}원|"></strong></h4>
 												    </div>
 					                            </div>
 					                        </div>
@@ -351,8 +351,8 @@ h3,.h3 {
 					                                <br>
 					                                <div class="room-price" style="display:flex;">
 					                                    <h4 style="margin-right:75%;"><strong>가격</strong></h4>
-					                                    <input type="hidden" th:value="${item.price4}"  id="price" name="price">
-														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price, 0, 'COMMA')}원|"></strong></h4>
+					                                    <input type="hidden" th:value="${item.price}"  id="price" name="price">
+														<h4><strong class="text-primary h4" th:text="|${#numbers.formatInteger(item.price*1.75, 0, 'COMMA')}원|"></strong></h4>
 												    </div>
 					                            </div>
 					                        </div>

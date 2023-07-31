@@ -12,6 +12,7 @@ public class CartItemDto {
 		this.id = cartItem.getItem().getId();
 		this.itemNm = cartItem.getItem().getItemNm();
 		this.imgUrl = imgUrl;		
+		this.address = cartItem.getItem().getAddress();
 	}
 	
 	private Long id;
@@ -19,4 +20,6 @@ public class CartItemDto {
 	private String itemNm;
 	
 	private String imgUrl;
+	
+	private String address;
 }

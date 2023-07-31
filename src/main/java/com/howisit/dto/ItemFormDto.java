@@ -20,14 +20,9 @@ public class ItemFormDto {
 	@NotBlank(message = "상품명은 필수 입력입니다.")
 	private String itemNm;
 	
-	@NotNull(message = "가격1은 필수 입력입니다.")
+	@NotNull(message = "가격은 필수 입력입니다.")
 	private int price;
 
-	private int price2;
-
-	private int price3;
-
-	private int price4;
 	
 	@NotNull(message = "주소는 필수 입력입니다.")
 	private String address;

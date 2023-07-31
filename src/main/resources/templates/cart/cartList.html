@@ -11,7 +11,9 @@
 
 <th:block layout:fragment="css">
 <style>
-
+    .col-md-offset-1 {
+         margin-left:0; 
+    }
 </style>
 </th:block>
 
@@ -23,7 +25,7 @@
             th:each="cart : ${carts.getContent()}">
                 <thead>
                     <tr>
-                        <th>찜한목록</th>
+                        <th></th>
                         <th></th>
                         <th class="text-center"></th>
                         <th class="text-center"></th>
@@ -56,9 +58,10 @@
                                
                                 <h4 class="media-heading" style="width:500px;">
                                 <span></span>
+                                <span th:text="|주소:&nbsp|+${cartItem.address}"></span>	
 								
                                 </h4>
-                                
+                         
                             </div>
                         </div>
                         </td>
@@ -75,8 +78,8 @@
                         </th:block>
                         <th:block >
 							<p>
-<!-- 								<button type="button" class="btn btn-danger"
-							    th:value="${order.orderId}" onclick="deleteOrder(this.value)">삭제하기</button> -->
+								<button type="button" class="btn btn-danger"
+							    th:value="${cart.cartId}" onclick="deleteCart(this.value)">삭제하기</button>
 							</p>
 						</th:block>
                         </td>
@@ -95,7 +98,7 @@
                     
                 </tbody>
             </table>
-            				<div>
+            	<div>
  					 <nav
 					  th:with="start=${(carts.number/maxPage)*maxPage + 1}
 			                 ,end=(${(carts.totalPages == 0) ? 1 : (start + (maxPage - 1) < carts.totalPages ? start + (maxPage - 1) : carts.totalPages)})"
