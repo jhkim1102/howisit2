@@ -33,8 +33,8 @@ public class ItemController {
 	private final ItemService itemService;
 	
 	//상품전체 리스트
-	@GetMapping(value = "/item/shop")
-	public String itemShopList(Model model, ItemSearchDto itemSearchDto, Optional<Integer> page) {
+	@GetMapping(value = {"/item/shop","/item/shop/{page}"})
+	public String itemShopList( Model model, ItemSearchDto itemSearchDto, Optional<Integer> page) {
 		Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 6);
 		Page<MainItemDto> items = itemService.getMainItemPage(itemSearchDto, pageable);
 		
