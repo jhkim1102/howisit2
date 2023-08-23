@@ -89,7 +89,7 @@ public boolean vaildateCart(Long cartId, String email) {
 	
 	//로그인한 사용자의 이메일과 주문한 사용자의 이메일이 같은 지 작동비교
 	if(!StringUtils.equals(curMember.getEmail(), savedMember.getEmail())) {
-		//같이 않으면
+		//같지 않으면
 		return false;
 	}
 

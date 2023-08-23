@@ -121,10 +121,7 @@ public class ItemService {
 		return mainItemPage;
 	}
 	
-	@Transactional(readOnly = true)
-	public List<ItemRankDto> getItemRankList(){
-		return itemRepository.getItemRankList();
-	}
+
 	
 
 }
